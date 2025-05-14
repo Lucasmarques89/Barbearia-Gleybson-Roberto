@@ -1,0 +1,415 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #000;
+    line-height: 1.6;
+}
+
+/* Header com gradiente */
+header {
+    background: linear-gradient(90deg, #000, #d4af37, #000);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    animation: fadeInDown 1s ease-in;
+}
+
+.logo img {
+    height: 60px;
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0.5rem 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #d4af37;
+}
+
+/* Seções */
+.section {
+    display: none;
+    padding: 2rem;
+}
+
+.section.active {
+    display: block;
+}
+
+/* Carrossel */
+.carrossel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.carrossel-container {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrossel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+.carrossel-slide img {
+    width: 100%;
+    height: 500px; /* Altura fixa para o carrossel */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorções */
+    display: block;
+}
+
+.carrossel-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #d4af37;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    animation: bounceIn 1s ease-in;
+}
+
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 0.75rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+.carrossel-btn.prev {
+    left: 1rem;
+}
+
+.carrossel-btn.next {
+    right: 1rem;
+}
+
+.carrossel-btn:hover {
+    background: #d4af37;
+}
+
+/* Seção de Serviços */
+.servicos {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.servicos h2 {
+    margin-bottom: 1.5rem;
+    color: #d4af37;
+    font-size: 2.5rem;
+    animation: fadeIn 1s ease-in;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.card {
+    background: #1a1a1a;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: scaleIn 1s ease-in;
+    display: flex; /* Habilita flexbox */
+    flex-direction: column; /* Organiza os elementos verticalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+}
+
+.card img {
+    max-width: 100%; /* Limita a largura da imagem */
+    max-height: 100%; /* Limita a altura da imagem */
+    object-fit: contain; /* Mantém a proporção da imagem */
+    display: block;
+}
+
+.card h3 {
+    color: #d4af37;
+    margin: 1rem 0;
+}
+
+.card p {
+    padding: 0 1rem 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.5);
+}
+
+/* Seção de Barbeiros */
+.barbeiros {
+    text-align: center;
+    background: #1a1a1a;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.barbeiros h2 {
+    margin-bottom: 1.5rem;
+    color: #d4af37;
+    font-size: 2.5rem;
+    animation: fadeIn 1s ease-in;
+}
+
+.barbeiros-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.barbeiro {
+    background: #000;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 250px;
+    transition: transform 0.3s;
+    animation: scaleIn 1s ease-in;
+}
+
+.barbeiro h3 {
+    color: #d4af37;
+    margin-bottom: 0.75rem;
+}
+
+.barbeiro:hover {
+    transform: scale(1.05);
+}
+
+/* Seção Galeria */
+.galeria {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.galeria h2 {
+    margin-bottom: 1.5rem;
+    color: #d4af37;
+    font-size: 2.5rem;
+    animation: fadeIn 1s ease-in;
+}
+
+.galeria-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.galeria-card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: scaleIn 1s ease-in;
+    position: relative;
+}
+.galeria-card img {
+    width: 100%;
+    height: 200px; /* Altura fixa para todas as imagens da galeria */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorções */
+    display: block;
+}
+
+.galeria-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.5);
+}
+
+.galeria-card:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(212, 175, 55, 0.3); /* Fundo dourado semi-transparente */
+    z-index: 1;
+}
+
+/* Seção Contato */
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.footer-section h3 {
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+.footer-section p, .footer-section a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.footer-section a:hover {
+    color: #d4af37;
+}
+
+.footer-copy {
+    text-align: center;
+    margin-top: 2rem;
+    color: #666;
+}
+
+/* Botão Fixo */
+.btn-fixo {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: #d4af37;
+    color: #000;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s;
+    animation: pulse 2s infinite;
+}
+
+.btn-fixo:hover {
+    background: #fff;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.3); }
+    50% { opacity: 1; transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .carrossel-slide img {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .carrossel-slide img {
+        height: 300px;
+    }
+
+    .carrossel-text {
+        font-size: 1.5rem;
+    }
+
+    .card, .barbeiro {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .card img, .galeria-card img {
+        height: 150px !important; /* Garante altura consistente em telas menores */
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .carrossel-slide img {
+        height: 200px;
+    }
+
+    .carrossel-text {
+        font-size: 1.2rem;
+    }
+
+    .servicos h2, .barbeiros h2, .galeria h2, #contato h2 {
+        font-size: 2rem;
+    }
+
+    .btn-fixo {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+}
